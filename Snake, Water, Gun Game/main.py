@@ -5,8 +5,12 @@
 
 Similar as Rock, Paper, Scissors Game.
 '''
+import random 
+guess = "SWG"
 
-Computer= input("Enter Your Choice: S or W or G \n")
+for i in range(len(guess)):
+    Computer= random.choice(guess)
+
 Player= input("Enter Your Choice: S or W or G \n")
 
 dict= {"S": -1,
@@ -17,17 +21,19 @@ dict= {"S": -1,
 n= dict[Computer]
 num= dict[Player]
 
+print(f"Your Choice is {Player} \nComputer Choice is {Computer} \n")
+
 if(n==-1 and num==0):
-    print("Computer Wins \n You Lose!")
+    print("Computer Wins \nYou Lose!")
 elif(n==0 and num==-1):
-    print("You Wins \n Computer Lose!")
+    print("You Wins \nComputer Lose!")
 elif(n==0 and num==1):
-    print("Computer Wins \n You Lose!")
+    print("Computer Wins \nYou Lose!")
 elif(n==1 and num==0):
-    print("You Wins \n Computer Lose!")
+    print("You Wins \nComputer Lose!")
 elif(n==1 and num==-1):
-    print("Computer Wins \n You Lose!")
+    print("Computer Wins \nYou Lose!")
 elif(n==-1 and num==1):
-    print("You Wins \n Computer Lose!")
+    print("You Wins \nComputer Lose!")
 else:
     print("TIE!")
