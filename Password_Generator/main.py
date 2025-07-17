@@ -1,23 +1,33 @@
-#Generate Password
+# Using 'string' modules
+
+import string
 import random
-str = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_"
-len_password = int(input("Decide your password length: "))
-password = "" #initialize with NULL("")
 
-for i in range(len_password):
-    password+= random.choice(str) #selects a random element from 'str' and concatenates to 'password'
+new_password = "" # Initialize 'new_password' with NULL("")
+size_password = ""
 
-print(password)
+if __name__ == "__main__":
+    set_1 = string.ascii_lowercase
+    set_2 = string.ascii_uppercase
+    set_3 = string.digits
+    set_4 = string.punctuation
 
+    len_password = input("ENTER LENGTH OF YOUR PASSWORD: ") #To_do_1: Gibberish 
+    
+    if(len_password.isdigit()):
+        size_password = int(len_password)
+    else:
+        print("Input is not a number--> >>>RE-ENTER!<<<")
 
+    s = [] # Empty List
+    s.extend(list(set_1)) # 'extend()' is a list property 
+    s.extend(list(set_2)) 
+    s.extend(list(set_3)) 
+    s.extend(list(set_4)) 
+    
+    random.shuffle(s) # Increase hardness of password
 
+    for i in range(size_password):
+        new_password+= random.choice(s)
 
-
-
-
-
-
-
-
-
-
+print(f"NEW PASSWORD: {new_password}")
