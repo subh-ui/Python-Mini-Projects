@@ -26,8 +26,5 @@ if __name__ == "__main__":
     s.extend(list(set_4)) 
     
     random.shuffle(s) # Increase hardness of password
-
-    for i in range(size_password):
-        new_password+= random.choice(s)
-
-print(f"NEW PASSWORD: {new_password}")
+    
+    print("".join(random.sample(s, size_password))) #random.sample(m,n) chooses and concatenates unique characters
